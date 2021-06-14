@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801D6932678027B00053D1F /* GifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801D6922678027B00053D1F /* GifLoader.swift */; };
+		1801D69C2678068800053D1F /* NoInternet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1801D69B2678068800053D1F /* NoInternet.gif */; };
 		187D81ED26770F9000468503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D81EC26770F9000468503 /* AppDelegate.swift */; };
 		187D81EF26770F9000468503 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D81EE26770F9000468503 /* SceneDelegate.swift */; };
 		187D81F126770F9000468503 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D81F026770F9000468503 /* HomeViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1801D6922678027B00053D1F /* GifLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLoader.swift; sourceTree = "<group>"; };
+		1801D69B2678068800053D1F /* NoInternet.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NoInternet.gif; sourceTree = "<group>"; };
 		187D81E926770F9000468503 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187D81EC26770F9000468503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187D81EE26770F9000468503 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1801D6972678033C00053D1F /* GifResources */ = {
+			isa = PBXGroup;
+			children = (
+				1801D69B2678068800053D1F /* NoInternet.gif */,
+			);
+			path = GifResources;
+			sourceTree = "<group>";
+		};
 		187D81E026770F9000468503 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 				187D822B26770FF400468503 /* Models */,
 				187D822726770FE900468503 /* Views */,
 				187D822626770FE100468503 /* Controllers */,
+				1801D6972678033C00053D1F /* GifResources */,
 				187D822526770FD300468503 /* System */,
 				187D81F526770F9400468503 /* Assets.xcassets */,
 				187D81F726770F9400468503 /* LaunchScreen.storyboard */,
@@ -196,6 +209,7 @@
 				187D823E2677570D00468503 /* CustomImageView.swift */,
 				187D824B2677609300468503 /* Constants.swift */,
 				187D82652677DA2800468503 /* NetworkMonitor.swift */,
+				1801D6922678027B00053D1F /* GifLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1801D69C2678068800053D1F /* NoInternet.gif in Resources */,
 				187D81F926770F9400468503 /* LaunchScreen.storyboard in Resources */,
 				187D81F626770F9400468503 /* Assets.xcassets in Resources */,
 			);
@@ -335,6 +350,7 @@
 				187D823926772F6300468503 /* Pokemons.swift in Sources */,
 				187D823426772EFD00468503 /* APIService.swift in Sources */,
 				187D82612677BB6C00468503 /* CustomPokemon.swift in Sources */,
+				1801D6932678027B00053D1F /* GifLoader.swift in Sources */,
 				187D82472677607000468503 /* PokemonCell.swift in Sources */,
 				187D825C2677A86B00468503 /* AbilityCell.swift in Sources */,
 				187D81EF26770F9000468503 /* SceneDelegate.swift in Sources */,

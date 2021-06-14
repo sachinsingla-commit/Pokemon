@@ -26,7 +26,7 @@ class APIService: NSObject {
             guard let safeData = data else {return}
             do{
                 let jsonData = try JSONDecoder().decode(Pokemons.self, from: safeData)
-                DispatchQueue.global().asyncAfter(deadline: .now() + (pagination ? 1 : 0)) {
+                DispatchQueue.global().asyncAfter(deadline: .now() + (pagination ? 2 : 1)) {
                     DispatchQueue.main.async { [self] in
                         if let fetchedPokemons = jsonData.results{
                             for pokemon in fetchedPokemons{

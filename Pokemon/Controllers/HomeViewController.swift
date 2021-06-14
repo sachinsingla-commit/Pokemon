@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     var isWaiting = false
     var offset = 20
     fileprivate let noInternetImage: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "NOINTERNET"))
+        let image = UIImageView()
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFit
         return image
@@ -76,7 +76,10 @@ class HomeViewController: UIViewController {
     //MARK:- UI Layouts
     private func noInternetImageLayout(){
         noInternetImage.frame = view.bounds
+        noInternetImage.loadGif(name: "NoInternet")
         view.addSubview(noInternetImage)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.title = "Connection Lost"
     }
     
     private func setupNavigationBar(){
@@ -292,8 +295,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UIScro
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (pokemonTableView.contentSize.height - 100 - scrollView.frame.size.height){
-            guard !APIService.sharedInstance.isPaginating else {return}
             self.pokemonTableView.tableFooterView = loadingSpinner()
+            guard !APIService.sharedInstance.isPaginating else {return}
             if let savedPokemons = UserDefaults.standard.object(forKey: "\(Constants.pokemons)\(offset)") as? Data {
                 let decoder = JSONDecoder()
                 if let loadedPokemons = try? decoder.decode([CustomPokemons].self, from: savedPokemons) {
@@ -310,9 +313,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UIScro
                     self.pokemonTableView.reloadData()
                 }
             }
-            self.pokemonTableView.tableFooterView = nil
             self.offset = self.offset + 20
         }
+        self.pokemonTableView.tableFooterView = nil
     }
     
     private func loadingSpinner() -> UIView{
